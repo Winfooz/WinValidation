@@ -1,0 +1,22 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+apply plugin: 'com.novoda.bintray-release'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.annotation:annotation:1.1.0"
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+publish {
+    userOrg = 'mnayef95'
+    repoName = "WinValidation"
+    groupId = "com.winfooz"
+    artifactId = POM_ARTIFACT_ID
+    publishVersion = POM_VERSION
+    desc = POM_DESCRIPTION
+    website = 'https://github.com/Winfooz/WinValidation'
+}

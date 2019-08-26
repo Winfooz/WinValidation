@@ -1,0 +1,4 @@
+include ':app', ':module1'
+include ':compiler'
+include ':annotations'
+include ':validation'

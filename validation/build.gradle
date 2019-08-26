@@ -1,0 +1,38 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'com.novoda.bintray-release'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.1"
+
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "com.google.android.material:material:1.1.0-alpha09"
+    api project(":annotations")
+}
+
+publish {
+    userOrg = 'mnayef95'
+    repoName = "WinValidation"
+    groupId = "com.winfooz"
+    artifactId = POM_ARTIFACT_ID
+    publishVersion = POM_VERSION
+    desc = POM_DESCRIPTION
+    website = 'https://github.com/Winfooz/WinValidation'
+}

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="err_username_validation">Username must not be empty</string>
+    <string name="err_password_validation">Password must be at least 8 characters</string>
+</resources>
